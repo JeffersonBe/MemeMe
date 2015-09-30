@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -27,37 +28,68 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HOE-Fz-OjL">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HOE-Fz-OjL" secondAttribute="height" multiplier="1:1" id="wGc-OU-UTc"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="wGc-OU-UTc"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="wGc-OU-UTc"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="aRj-xN-7e0" secondAttribute="trailing" constant="-20" id="4bt-UT-eQo"/>
-                            <constraint firstItem="aRj-xN-7e0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Nat-bA-zhE"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aRj-xN-7e0" secondAttribute="bottom" id="ulY-gF-Oim"/>
+                            <constraint firstItem="aRj-xN-7e0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Dga-yF-gIS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aRj-xN-7e0" secondAttribute="bottom" id="TOk-sF-kln"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aRj-xN-7e0" secondAttribute="trailing" constant="-20" id="VMY-Z3-D6d"/>
+                            <constraint firstItem="HOE-Fz-OjL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="g1A-a4-1Zn"/>
+                            <constraint firstItem="aRj-xN-7e0" firstAttribute="top" secondItem="HOE-Fz-OjL" secondAttribute="bottom" constant="231" id="pcE-2b-OkJ"/>
+                            <constraint firstItem="HOE-Fz-OjL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="skI-qd-oVO"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="aRj-xN-7e0"/>
+                                <exclude reference="HOE-Fz-OjL"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="4bt-UT-eQo"/>
-                                <exclude reference="Nat-bA-zhE"/>
-                                <exclude reference="ulY-gF-Oim"/>
+                                <exclude reference="g1A-a4-1Zn"/>
+                                <exclude reference="skI-qd-oVO"/>
+                                <exclude reference="Dga-yF-gIS"/>
+                                <exclude reference="VMY-Z3-D6d"/>
+                                <exclude reference="pcE-2b-OkJ"/>
+                                <exclude reference="TOk-sF-kln"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="aRj-xN-7e0"/>
+                                <include reference="HOE-Fz-OjL"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4bt-UT-eQo"/>
-                                <include reference="Nat-bA-zhE"/>
-                                <include reference="ulY-gF-Oim"/>
+                                <include reference="g1A-a4-1Zn"/>
+                                <include reference="skI-qd-oVO"/>
+                                <include reference="Dga-yF-gIS"/>
+                                <include reference="VMY-Z3-D6d"/>
+                                <include reference="pcE-2b-OkJ"/>
+                                <include reference="TOk-sF-kln"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="ImagePickerView" destination="HOE-Fz-OjL" id="GsI-5M-LUn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="360" y="389.25"/>
         </scene>
     </scenes>
 </document>
