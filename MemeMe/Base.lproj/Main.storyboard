@@ -89,6 +89,14 @@
                                     </mask>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYt-tc-39r">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="share:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6jQ-Yy-dqa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -96,12 +104,14 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aRj-xN-7e0" secondAttribute="bottom" id="05T-HG-lE5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HOE-Fz-OjL" secondAttribute="trailing" constant="-20" id="6RK-nY-l7Q"/>
                             <constraint firstItem="aRj-xN-7e0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Fb4-Kb-Dzv"/>
+                            <constraint firstItem="SYt-tc-39r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="HXc-52-uYk"/>
                             <constraint firstItem="HOE-Fz-OjL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="HgO-gd-b3v"/>
                             <constraint firstItem="k9N-c2-mss" firstAttribute="leading" secondItem="HOE-Fz-OjL" secondAttribute="trailing" constant="-325" id="Pci-nU-nWy"/>
                             <constraint firstItem="HOE-Fz-OjL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VL5-Xj-CLi"/>
                             <constraint firstItem="HOE-Fz-OjL" firstAttribute="top" secondItem="k9N-c2-mss" secondAttribute="bottom" constant="-66" id="WTC-mY-5Tr"/>
                             <constraint firstItem="k9N-c2-mss" firstAttribute="centerX" secondItem="HOE-Fz-OjL" secondAttribute="centerX" id="bdT-Oz-Tb2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aRj-xN-7e0" secondAttribute="trailing" constant="-20" id="l8s-hv-HDT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SYt-tc-39r" secondAttribute="trailing" id="nPc-Qz-qeq"/>
                             <constraint firstItem="L9f-sQ-PMy" firstAttribute="top" secondItem="HOE-Fz-OjL" secondAttribute="bottom" constant="-60" id="x5a-iv-LOl"/>
                             <constraint firstItem="L9f-sQ-PMy" firstAttribute="leading" secondItem="HOE-Fz-OjL" secondAttribute="trailing" constant="-380" id="xtg-Rf-rlu"/>
                         </constraints>
@@ -111,6 +121,7 @@
                                 <exclude reference="HOE-Fz-OjL"/>
                                 <exclude reference="L9f-sQ-PMy"/>
                                 <exclude reference="k9N-c2-mss"/>
+                                <exclude reference="SYt-tc-39r"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="05T-HG-lE5"/>
@@ -118,6 +129,8 @@
                                 <exclude reference="xtg-Rf-rlu"/>
                                 <exclude reference="Pci-nU-nWy"/>
                                 <exclude reference="bdT-Oz-Tb2"/>
+                                <exclude reference="HXc-52-uYk"/>
+                                <exclude reference="nPc-Qz-qeq"/>
                                 <exclude reference="Fb4-Kb-Dzv"/>
                                 <exclude reference="l8s-hv-HDT"/>
                                 <exclude reference="6RK-nY-l7Q"/>
@@ -132,6 +145,7 @@
                                 <include reference="HOE-Fz-OjL"/>
                                 <include reference="L9f-sQ-PMy"/>
                                 <include reference="k9N-c2-mss"/>
+                                <include reference="SYt-tc-39r"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="05T-HG-lE5"/>
@@ -139,6 +153,8 @@
                                 <include reference="xtg-Rf-rlu"/>
                                 <include reference="Pci-nU-nWy"/>
                                 <include reference="bdT-Oz-Tb2"/>
+                                <include reference="HXc-52-uYk"/>
+                                <include reference="nPc-Qz-qeq"/>
                                 <include reference="Fb4-Kb-Dzv"/>
                                 <include reference="l8s-hv-HDT"/>
                                 <include reference="6RK-nY-l7Q"/>
@@ -151,6 +167,7 @@
                     <connections>
                         <outlet property="ImagePickerView" destination="HOE-Fz-OjL" id="GsI-5M-LUn"/>
                         <outlet property="bottomTextField" destination="L9f-sQ-PMy" id="g2m-hl-hVu"/>
+                        <outlet property="shareButton" destination="SYt-tc-39r" id="p9M-op-PNC"/>
                         <outlet property="topTextField" destination="k9N-c2-mss" id="1hx-Xn-gRQ"/>
                     </connections>
                 </viewController>
