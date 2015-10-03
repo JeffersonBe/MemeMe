@@ -19,13 +19,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRj-xN-7e0">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SaE-ky-15h" userLabel="TopToolbar">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <animations/>
                                 <items>
-                                    <barButtonItem title="Pick" id="j8g-Jn-BLm">
+                                    <barButtonItem style="plain" systemItem="action" id="TSN-sM-IM3">
                                         <connections>
-                                            <action selector="pickImage:" destination="BYZ-38-t0r" id="UGn-ch-jXu"/>
+                                            <action selector="share:" destination="BYZ-38-t0r" id="vnS-rt-7Qm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="D1r-kj-TWa"/>
+                                    <barButtonItem title="Cancel" id="cVA-xc-pdw">
+                                        <connections>
+                                            <action selector="cancel" destination="BYZ-38-t0r" id="vJ0-od-Hhv"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -47,7 +53,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Put your text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L9f-sQ-PMy">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Put your text" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="L9f-sQ-PMy">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <animations/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -76,6 +82,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="hrM-Ma-7z2"/>
                                 </constraints>
+                                <color key="textColor" red="1" green="0.0" blue="0.051290923320000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <variation key="default">
@@ -89,14 +96,30 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYt-tc-39r">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRj-xN-7e0" userLabel="BottomToolBar">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <animations/>
-                                <state key="normal" title="Share"/>
-                                <connections>
-                                    <action selector="share:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6jQ-Yy-dqa"/>
-                                </connections>
-                            </button>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6jY-1A-Drl"/>
+                                    <barButtonItem title="Pick" systemItem="camera" id="j8g-Jn-BLm" userLabel="Camera Button">
+                                        <connections>
+                                            <action selector="pickImage:" destination="BYZ-38-t0r" id="cXR-n4-xon"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Album" style="plain" id="veO-uj-y1U">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4Yu-gK-BZp">
+                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <state key="normal" title="Album"/>
+                                            <connections>
+                                                <action selector="pickImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VOb-Eo-gb3"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="JHc-Jy-nTZ"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -104,70 +127,76 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aRj-xN-7e0" secondAttribute="bottom" id="05T-HG-lE5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HOE-Fz-OjL" secondAttribute="trailing" constant="-20" id="6RK-nY-l7Q"/>
                             <constraint firstItem="aRj-xN-7e0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Fb4-Kb-Dzv"/>
-                            <constraint firstItem="SYt-tc-39r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="HXc-52-uYk"/>
                             <constraint firstItem="HOE-Fz-OjL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="HgO-gd-b3v"/>
+                            <constraint firstItem="SaE-ky-15h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Mlz-aS-T02"/>
                             <constraint firstItem="k9N-c2-mss" firstAttribute="leading" secondItem="HOE-Fz-OjL" secondAttribute="trailing" constant="-325" id="Pci-nU-nWy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SaE-ky-15h" secondAttribute="trailing" constant="-20" id="Qfk-lh-eaN"/>
                             <constraint firstItem="HOE-Fz-OjL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VL5-Xj-CLi"/>
                             <constraint firstItem="HOE-Fz-OjL" firstAttribute="top" secondItem="k9N-c2-mss" secondAttribute="bottom" constant="-66" id="WTC-mY-5Tr"/>
                             <constraint firstItem="k9N-c2-mss" firstAttribute="centerX" secondItem="HOE-Fz-OjL" secondAttribute="centerX" id="bdT-Oz-Tb2"/>
+                            <constraint firstItem="SaE-ky-15h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hr9-sP-EbF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aRj-xN-7e0" secondAttribute="trailing" constant="-20" id="l8s-hv-HDT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="SYt-tc-39r" secondAttribute="trailing" id="nPc-Qz-qeq"/>
                             <constraint firstItem="L9f-sQ-PMy" firstAttribute="top" secondItem="HOE-Fz-OjL" secondAttribute="bottom" constant="-60" id="x5a-iv-LOl"/>
                             <constraint firstItem="L9f-sQ-PMy" firstAttribute="leading" secondItem="HOE-Fz-OjL" secondAttribute="trailing" constant="-380" id="xtg-Rf-rlu"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="aRj-xN-7e0"/>
+                                <exclude reference="SaE-ky-15h"/>
                                 <exclude reference="HOE-Fz-OjL"/>
                                 <exclude reference="L9f-sQ-PMy"/>
                                 <exclude reference="k9N-c2-mss"/>
-                                <exclude reference="SYt-tc-39r"/>
+                                <exclude reference="aRj-xN-7e0"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="05T-HG-lE5"/>
-                                <exclude reference="x5a-iv-LOl"/>
-                                <exclude reference="xtg-Rf-rlu"/>
-                                <exclude reference="Pci-nU-nWy"/>
-                                <exclude reference="bdT-Oz-Tb2"/>
-                                <exclude reference="HXc-52-uYk"/>
-                                <exclude reference="nPc-Qz-qeq"/>
-                                <exclude reference="Fb4-Kb-Dzv"/>
-                                <exclude reference="l8s-hv-HDT"/>
+                                <exclude reference="Mlz-aS-T02"/>
+                                <exclude reference="Qfk-lh-eaN"/>
+                                <exclude reference="hr9-sP-EbF"/>
                                 <exclude reference="6RK-nY-l7Q"/>
                                 <exclude reference="HgO-gd-b3v"/>
                                 <exclude reference="VL5-Xj-CLi"/>
                                 <exclude reference="WTC-mY-5Tr"/>
+                                <exclude reference="Pci-nU-nWy"/>
+                                <exclude reference="bdT-Oz-Tb2"/>
+                                <exclude reference="x5a-iv-LOl"/>
+                                <exclude reference="xtg-Rf-rlu"/>
+                                <exclude reference="Fb4-Kb-Dzv"/>
+                                <exclude reference="l8s-hv-HDT"/>
+                                <exclude reference="05T-HG-lE5"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="aRj-xN-7e0"/>
+                                <include reference="SaE-ky-15h"/>
                                 <include reference="HOE-Fz-OjL"/>
                                 <include reference="L9f-sQ-PMy"/>
                                 <include reference="k9N-c2-mss"/>
-                                <include reference="SYt-tc-39r"/>
+                                <include reference="aRj-xN-7e0"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="05T-HG-lE5"/>
-                                <include reference="x5a-iv-LOl"/>
-                                <include reference="xtg-Rf-rlu"/>
-                                <include reference="Pci-nU-nWy"/>
-                                <include reference="bdT-Oz-Tb2"/>
-                                <include reference="HXc-52-uYk"/>
-                                <include reference="nPc-Qz-qeq"/>
-                                <include reference="Fb4-Kb-Dzv"/>
-                                <include reference="l8s-hv-HDT"/>
+                                <include reference="Mlz-aS-T02"/>
+                                <include reference="Qfk-lh-eaN"/>
+                                <include reference="hr9-sP-EbF"/>
                                 <include reference="6RK-nY-l7Q"/>
                                 <include reference="HgO-gd-b3v"/>
                                 <include reference="VL5-Xj-CLi"/>
                                 <include reference="WTC-mY-5Tr"/>
+                                <include reference="Pci-nU-nWy"/>
+                                <include reference="bdT-Oz-Tb2"/>
+                                <include reference="x5a-iv-LOl"/>
+                                <include reference="xtg-Rf-rlu"/>
+                                <include reference="Fb4-Kb-Dzv"/>
+                                <include reference="l8s-hv-HDT"/>
+                                <include reference="05T-HG-lE5"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="ImagePickerView" destination="HOE-Fz-OjL" id="GsI-5M-LUn"/>
+                        <outlet property="albumButton" destination="4Yu-gK-BZp" id="DXQ-0d-qyb"/>
                         <outlet property="bottomTextField" destination="L9f-sQ-PMy" id="g2m-hl-hVu"/>
-                        <outlet property="shareButton" destination="SYt-tc-39r" id="p9M-op-PNC"/>
+                        <outlet property="cameraButton" destination="j8g-Jn-BLm" id="Nz7-NT-L6h"/>
+                        <outlet property="cancelButton" destination="cVA-xc-pdw" id="Xg1-fb-DmK"/>
+                        <outlet property="imagePickerView" destination="HOE-Fz-OjL" id="kII-9O-08D"/>
+                        <outlet property="shareButton" destination="TSN-sM-IM3" id="ShV-1M-LZn"/>
                         <outlet property="topTextField" destination="k9N-c2-mss" id="1hx-Xn-gRQ"/>
                     </connections>
                 </viewController>
