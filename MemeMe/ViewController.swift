@@ -119,4 +119,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name:UIKeyboardWillHideNotification, object: nil)
     }
+
+    func save() {
+        //Create the meme
+        let memedImage = generateMemedImage()
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image:ImagePickerView.image!, memedImage: memedImage)
+    }
+
+    func generateMemedImage() -> UIImage {
+
+        // TODO: Hide toolbar and navbar
+
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        self.view.drawViewHierarchyInRect(self.view.frame,
+            afterScreenUpdates: true)
+        let memedImage : UIImage =
+        UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        // TODO:  Show toolbar and navbar
+
+        return memedImage
+    }
 }
