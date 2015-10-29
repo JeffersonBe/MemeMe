@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeEditorViewController.swift
 //  MemeMe
 //
 //  Created by Jefferson Bonnaire on 30/09/2015.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var topToolbar: UIToolbar!
     @IBOutlet weak var bottomToolbar: UIToolbar!
@@ -21,6 +21,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var shareButton: UIBarButtonItem!
     var meme: Meme?
     var memedImage: UIImage?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -166,6 +167,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             image:imagePickerView.image!,
             memedImage: generateMemedImage()
         )
+        
+        // Get data from Shared Model in AppDelegate
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme!)
+        print(appDelegate.memes)
     }
     
     //  Generate Meme Image
