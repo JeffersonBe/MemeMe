@@ -10,30 +10,36 @@ import UIKit
 
 class MemeCollectionViewController: UICollectionViewController {
     
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     var memes: [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let space: CGFloat = 0.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        flowLayout.minimumLineSpacing = space
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.itemSize = CGSizeMake(dimension, dimension)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        self.collectionView?.reloadData()
+        collectionView!.reloadData()
     }
-    
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        collectionView.registerClass(MemeCollectionViewCell.self, forCellWithReuseIdentifier: "memeCell")
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("memeCell", forIndexPath: indexPath) as! MemeCollectionViewCell
+        
         let meme = memes[indexPath.item]
-        cell.textLabel.text = "\(meme.topText) \(meme.bottomText)"
-        cell.imageView.image = meme.memedImage
+        cell.textLabel?.text = "\(meme.topText) \(meme.bottomText)"
+        cell.imageView?.image = meme.memedImage
     
         return cell
     }
@@ -49,5 +55,4 @@ class MemeCollectionViewController: UICollectionViewController {
         //Present the view controller using navigation
         self.navigationController!.pushViewController(detailController, animated: true)
     }
-    
 }
