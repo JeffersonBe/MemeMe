@@ -18,11 +18,12 @@ class MemeCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let space: CGFloat = 0.0
-        let dimension = (view.frame.size.width - (2 * space)) / 3.0
-        flowLayout.minimumLineSpacing = space
-        flowLayout.minimumInteritemSpacing = space
-        flowLayout.itemSize = CGSizeMake(dimension, dimension)
+        //  collectionView?.backgroundColor = UIColor.whiteColor()
+        let space: CGFloat = 3.0
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.minimumLineSpacing = 0
+        let numberOfItemInARow: CGFloat = 4.0
+        flowLayout.itemSize = CGSize(width: (view.bounds.size.width - space) / numberOfItemInARow, height: view.bounds.size.width / numberOfItemInARow)
     }
     
     override func viewDidAppear(animated: Bool) {
