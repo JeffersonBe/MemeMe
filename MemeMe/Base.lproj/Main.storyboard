@@ -205,21 +205,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eN8-Eo-0Sp">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eN8-Eo-0Sp">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <animations/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Bh-B5-SkY">
-                                            <rect key="frame" x="0.0" y="154" width="200" height="30"/>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="200" id="FLJ-4h-u83"/>
-                                                <constraint firstAttribute="height" constant="30" id="Y0b-Vc-IzC"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -229,14 +218,11 @@
                                     <constraint firstAttribute="bottomMargin" secondItem="eN8-Eo-0Sp" secondAttribute="bottom" constant="-8" id="IJx-Rb-QAE"/>
                                     <constraint firstItem="eN8-Eo-0Sp" firstAttribute="leading" secondItem="6c4-w3-8kr" secondAttribute="leadingMargin" constant="-8" id="Qll-90-WBG"/>
                                     <constraint firstItem="eN8-Eo-0Sp" firstAttribute="top" secondItem="6c4-w3-8kr" secondAttribute="topMargin" constant="-8" id="cR2-KJ-Te1"/>
-                                    <constraint firstItem="1Bh-B5-SkY" firstAttribute="top" secondItem="eN8-Eo-0Sp" secondAttribute="bottom" constant="-46" id="pyQ-QH-ej3"/>
-                                    <constraint firstItem="1Bh-B5-SkY" firstAttribute="leading" secondItem="eN8-Eo-0Sp" secondAttribute="trailing" constant="-200" id="rIR-gD-feW"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="eN8-Eo-0Sp" secondAttribute="trailing" constant="-8" id="rfQ-SH-jg3"/>
                                 </constraints>
                                 <size key="customSize" width="200" height="200"/>
                                 <connections>
                                     <outlet property="imageView" destination="eN8-Eo-0Sp" id="IGK-Zy-oPu"/>
-                                    <outlet property="textLabel" destination="1Bh-B5-SkY" id="G30-Zc-9ZD"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -386,6 +372,6 @@
         <image name="TableIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LZv-jd-5Nr"/>
+        <segue reference="ovG-Qb-eC0"/>
     </inferredMetricsTieBreakers>
 </document>
