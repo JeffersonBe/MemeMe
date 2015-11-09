@@ -196,6 +196,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction func cancel() {
         quitTextField()
         emptyAndHideScene()
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func emptyAndHideScene() {

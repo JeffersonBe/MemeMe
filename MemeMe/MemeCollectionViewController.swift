@@ -18,19 +18,21 @@ class MemeCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //  collectionView?.backgroundColor = UIColor.whiteColor()
+        collectionView?.backgroundColor = UIColor.whiteColor()
         let space: CGFloat = 3.0
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.minimumLineSpacing = 0
-        let numberOfItemInARow: CGFloat = 4.0
-        flowLayout.itemSize = CGSize(width: (view.bounds.size.width - space) / numberOfItemInARow, height: view.bounds.size.width / numberOfItemInARow)
+        let numberOfItemInARow: CGFloat = 2.0
+        flowLayout.itemSize = CGSize(width: (view.bounds.size.width - 2 * space) / numberOfItemInARow, height: view.bounds.size.width / numberOfItemInARow)
     }
     
+    /* Reload Data */
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         collectionView!.reloadData()
     }
     
+    // MARK: CollectionView delegate
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }
@@ -46,14 +48,10 @@ class MemeCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        //Grab the DetailVC from Storyboard
         let object: AnyObject = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController")
         let detailController = object as! MemeDetailViewController
         
-        //Populate view controller with data from the selected item
         detailController.meme = memes[indexPath.row]
-        
-        //Present the view controller using navigation
-        self.navigationController!.pushViewController(detailController, animated: true)
+        navigationController!.pushViewController(detailController, animated: true)
     }
 }

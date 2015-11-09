@@ -16,6 +16,8 @@ class MemeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 215.0
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -31,10 +33,12 @@ class MemeTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {   
-        let cell = tableView.dequeueReusableCellWithIdentifier("memeCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("memeCell", forIndexPath: indexPath) as! MemeTableViewCell
         let meme = memes[indexPath.row]
-        cell.textLabel?.text =  "\(meme.topText) \(meme.bottomText)"
-        cell.imageView?.image = meme.memedImage
+        cell.MemeTopTextLabel?.text =  "\(meme.topText)"
+        cell.MemeBottomTextLabel?.text = "\(meme.bottomText)"
+        cell.MemeImageView?.image = meme.memedImage
+        cell.sizeToFit()
         return cell
     }
     
@@ -64,5 +68,4 @@ class MemeTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
-    
 }
